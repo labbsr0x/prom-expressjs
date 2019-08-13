@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "express-monitor": "github:labbsr0x/express-monitor",
     "prom-client": "^11.5.3"
   }
 }

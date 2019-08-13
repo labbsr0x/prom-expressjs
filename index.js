@@ -1,29 +1,9 @@
 const express = require("express"); 
 const promclient = require("prom-client");
+const { Monitor } = require("express-monitor");
 
 const app = express(); 
-
-// a cumulative histogram to collect http request metrics in well-defined buckets of interest
-const hist = new promclient.Histogram({
-    name: "requests_seconds",
-    help: "measure the number of requests processed and its duration in seconds separated by well-defined buckets of interest",
-    buckets: [0.3, 1, 2, 5],
-    labelNames: [ "status", "method", "url" ]
-});
-
-// middleware to capture prometheus metrics for the request
-app.all(/^(?!\/metrics$).*/, (req, res, next) => {
-    let end = hist.startTimer()
-    next();
-    res.once("finish", () => {
-        end({"status": res.statusCode, "method":req.method, "url":req.url})
-    });
-})
-
-// endpoint to collect all the registered metrics
-app.get("/metrics", (req, res) => {
-    res.status(200).header("Content-Type", "text/plain").send(promclient.register.metrics())
-});
+Monitor.init(app, true);
 
 // a generic endpoint to simulate a valid operation
 app.all(/^(?!\/metrics$).*/, (req, res) => {
