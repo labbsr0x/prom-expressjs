@@ -1,6 +1,6 @@
 const express = require("express"); 
 const promclient = require("prom-client");
-const { Monitor } = require("express-monitor");
+const { Monitor } = require("@labbsr0x/express-monitor");
 
 const app = express(); 
 Monitor.init(app, true);

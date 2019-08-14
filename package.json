@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@labbsr0x/express-monitor": "0.0.2",
     "express": "^4.17.1",
     "express-monitor": "github:labbsr0x/express-monitor",
     "prom-client": "^11.5.3"
