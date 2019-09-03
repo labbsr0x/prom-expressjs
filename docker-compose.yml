@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+
+  prom-expressjs:
+    build: .
+    image: abilioesteves/prom-expressjs:latest
+    ports:
+      - 23498:23498
+    environment:
+      - REGISTRY_ETCD_URL=http://etcd:2379
+  
+  etcd:
+    image: quay.io/coreos/etcd:v3.2.25
+    environment:
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
