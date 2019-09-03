@@ -15,6 +15,12 @@ Or just:
 > docker run -d -p 23498:23498 abilioesteves/prom-expressjs:latest
 ```
 
+Event better:
+
+```
+> docker-compose up
+```
+
 Then go to any random path on port `23498`, e.g. `http://localhost:23498/myname`.
 
 The request will be registered by Prometheus and can be viewed at `http://localhost:23498/metrics`.
