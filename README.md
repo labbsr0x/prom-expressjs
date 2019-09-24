@@ -12,10 +12,10 @@ Type on terminal to run:
 Or just:
 
 ```
-> docker run -d -p 23498:23498 abilioesteves/prom-expressjs:latest
+> docker run -d -p 23498:23498 labbsr0x/prom-expressjs:latest
 ```
 
-Event better:
+Even better:
 
 ```
 > docker-compose up

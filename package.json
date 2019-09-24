@@ -1,5 +1,5 @@
 {
-  "name": "node-prom",
+  "name": "prom-expressjs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,6 @@
   "dependencies": {
     "@labbsr0x/express-monitor": "1.1.0",
     "express": "^4.17.1",
-    "express-monitor": "github:labbsr0x/express-monitor",
     "prom-client": "^11.5.3"
   }
 }

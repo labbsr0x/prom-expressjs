@@ -4,7 +4,7 @@ services:
 
   prom-expressjs:
     build: .
-    image: abilioesteves/prom-expressjs:latest
+    image: labbsr0x/prom-expressjs:latest
     ports:
       - 23498:23498
     environment:
